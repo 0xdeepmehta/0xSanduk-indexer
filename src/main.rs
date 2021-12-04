@@ -14,10 +14,11 @@ use crate::solana::get_accounts_and_update;
 
 use diesel::prelude::*;
 use dotenv::dotenv;
+use std::env;
 
 pub fn establish_connection() -> PgConnection {
     dotenv().ok();
-    let database_url = "postgres://postgres:password@localhost/deep";
+    let database_url = env::var("DATABASE_URL").expect("Missing DATABASE_URL env var");
     PgConnection::establish(&database_url)
         .unwrap_or_else(|_| panic!("Error connnecting to {}", database_url))
 }
