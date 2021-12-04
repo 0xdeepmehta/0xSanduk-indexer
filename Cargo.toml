@@ -1,0 +1,16 @@
+[package]
+name = "Sanduk-indexer"
+version = "0.1.0"
+edition = "2018"
+
+
+[dependencies]
+borsh = "0.9.1"
+rocket = {version = "0.5.0-rc.1", features = ["tls", "json"]}
+rocket_cors = {git = "https://github.com/lawliet89/rocket_cors", branch = "master"}
+solana-client = "1.8.3"
+solana-account-decoder = "1.8.3"
+serde = "1.0.130"
+solana-sdk = "1.8.3"
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
